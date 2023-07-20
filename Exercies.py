@@ -8,6 +8,7 @@ from datetime import date
 import random
 import os
 import string
+## TODO Exercices basic 1
 # First Exercice print twinkle little star in a specefic manner
 def exo1():
     print("Twinkle, twinkle, little star,\n\tHow I wonder what you are!\
@@ -183,7 +184,7 @@ def exo33():
     b = int(input("Input the second number : "))
     c = int(input("Input the third number : "))
     print(f"The sum of {a} and {b} and {c} is {0 if (a == b or b == c or a == c) else a+b+c}")
-## Python Unit Test
+## TODO Builtin modules
 # 1. Write a Python program to create a class representing a Circle. Include methods to calculate its area and perimeter.
 class circle():
     def __init__(self,r):
@@ -272,7 +273,7 @@ def random_char():
     for a in range(max_length):
         s += random.choice(string.ascii_letters)
     print(f"Random generated string : {s}")
-## TODO Builtin modules
+# TODO data type string
 # 1. Write a Python program to calculate the length of a string.
 def calculate_len():
     my_string = "Zipzop"
@@ -307,8 +308,44 @@ def special_swap():
     n1 = len(my_str1)
     n2 = len(my_str2)
     print(f"The output is : {my_str2[0:n2-1]+my_str1[-1:]} {my_str1[0:n1-1]+my_str2[-1:]}")
+# TODO JSON exercices
+import json
+# 1. Write a Python program to convert JSON data to Python object.
+def convert_json_to_python():
+    my_json = '{"name":"Mehdi", "age":23, "city":"Reims"}'
+    to_python = json.loads(my_json)
+    print(to_python)
+    return to_python
+# 2. Write a Python program to convert Python object to JSON data.
+def convert_python_to_json():
+    python_format = convert_json_to_python()
+    json_format = json.dumps(python_format)
+    print(type(json_format))
+    print(json_format)
+# 3. Write a Python program to convert Python objects into JSON strings. Print all the values.
+def universal_convert_json():
+    mydict = {"name":"mehdi","age":23,"city":"Reims"}
+    print(type(mydict))
+    mylist = ["Red", "Blue", "Yellow"]
+    print(type(mylist))
+    mytuple = (1,)
+    print(type(mytuple))
+    print(json.dumps(mydict))
+    print(json.dumps(mylist))
+    print(json.dumps(mytuple))
+# 4. Write a Python program to convert Python dictionary object (sort by key) to JSON data. Print the object members with indent level 4.
+def convert_dict_to_json():
+    j_str = {'4': 5, '6': 7, '1': 3, '2': 4}
+    print(j_str)
+    j_str_sorted = dict(sorted(j_str.items()))
+    print(j_str_sorted)
+    j_json = json.dumps(j_str_sorted, indent = 4)
+    print(j_json)
+    # or
+    print(json.dumps(j_str, sort_keys = True, indent = 4))
+
 # Print the solution of the exercice
 if __name__ == "__main__":
-    special_swap()
+    convert_dict_to_json()
 #https://www.w3resource.com/python-exercises/python-basic-exercises.php
 #https://www.w3resource.com/python-exercises/
