@@ -343,9 +343,25 @@ def convert_dict_to_json():
     print(j_json)
     # or
     print(json.dumps(j_str, sort_keys = True, indent = 4))
-
+## TODO List exercies
+import numpy as np
+# 1. Sum of a list
+def sum_list():
+    mylist = [1,2,3,4,5]
+    print(np.sum(mylist))
+# 280. Write a Python program that takes a list of integers and finds all pairs of integers that differ by three. Return all pairs of integers in a list.
+def pairs_of_three():
+    mylist = [0,3,5,8,10,7,4,1,9,25]
+    pair_list = []
+    for n in mylist:
+        for x in mylist:
+            if abs(n-x) == 3:
+                if [x,n] not in pair_list:
+                    pair_list.append([n,x])
+    
+    print(pair_list)
 # Print the solution of the exercice
 if __name__ == "__main__":
-    convert_dict_to_json()
+    pairs_of_three()
 #https://www.w3resource.com/python-exercises/python-basic-exercises.php
 #https://www.w3resource.com/python-exercises/
